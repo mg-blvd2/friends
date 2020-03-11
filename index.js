@@ -3,7 +3,6 @@
     2. ejs files end with .ejs
     3. Have to let the NodeJS engine know that we are using EJS
 */
-const port = 3000;
 var express = require("express");
 var bodyParser = require("body-parser")
 var app = express();
@@ -34,6 +33,6 @@ app.get("*", function(req, res){
   res.render("error");
 });
 
-app.listen(port, function(){
+app.listen(process.env.PORT, function(){
   console.log("Server is up and running!");
 });
